@@ -16,6 +16,8 @@ FROM alpine
 # copy the binary built in golang container into the alpine container
 COPY --from=binaryBuilder /go/src/helloworld/main /opt/helloworld/
 
+WORKDIR /opt/helloworld/
+
 # Expose the port the container will run on. This should match the port in the binary.
 EXPOSE 6060
 
